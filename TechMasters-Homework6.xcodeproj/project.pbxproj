@@ -27,6 +27,7 @@
 		846197932981EF710074521A /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846197922981EF710074521A /* SearchCell.swift */; };
 		84EA47BA2983F9FD00FBDC22 /* RestaurantCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA47B92983F9FD00FBDC22 /* RestaurantCollectionCell.swift */; };
 		84EA47BC2983FE5100FBDC22 /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA47BB2983FE5100FBDC22 /* Cuisine.swift */; };
+		84F2104C298816C600419956 /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F2104B298816C600419956 /* MainTabVC.swift */; };
 		84FCF12A2982C0B6001636DF /* CarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCF1292982C0B6001636DF /* CarouselCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		846197922981EF710074521A /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		84EA47B92983F9FD00FBDC22 /* RestaurantCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCollectionCell.swift; sourceTree = "<group>"; };
 		84EA47BB2983FE5100FBDC22 /* Cuisine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cuisine.swift; sourceTree = "<group>"; };
+		84F2104B298816C600419956 /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
 		84FCF1292982C0B6001636DF /* CarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 				84FCF16B2982F8CC001636DF /* Search */,
 				84FCF16A2982F8C3001636DF /* Profile */,
 				84FCF1692982F8B9001636DF /* Campaign */,
+				84F2104B298816C600419956 /* MainTabVC.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				84FCF12A2982C0B6001636DF /* CarouselCell.swift in Sources */,
 				8461978F2981D22E0074521A /* BannerCollectionCell.swift in Sources */,
 				84619763298139710074521A /* AppDelegate.swift in Sources */,
+				84F2104C298816C600419956 /* MainTabVC.swift in Sources */,
 				846197872981BCA90074521A /* Restaurant.swift in Sources */,
 				8461978D2981C6CE0074521A /* CampaignVC.swift in Sources */,
 				84619765298139710074521A /* SceneDelegate.swift in Sources */,

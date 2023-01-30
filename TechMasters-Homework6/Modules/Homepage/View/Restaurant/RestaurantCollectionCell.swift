@@ -13,8 +13,9 @@ class RestaurantCollectionCell: UICollectionViewCell {
     private let restaurantCellIdentifier = "restaurantCell"
     
     private let restaurants: [Restaurant] = [
-        Restaurant(name: "Günaydın Köfte & Döner (Göztepe Mah.)", imageName: "gunaydin"), Restaurant(name: "Greenie Fun & Food (Bostancı Mah.)", imageName: "greenieFood"),
-        Restaurant(name: "Zamane Tatlısı (Koşuyolu Mah.)", imageName: "zamaneTatlisi"), Restaurant(name: "Zula (Eğitim Mah.)", imageName: "zula")
+        Restaurant(name: "Günaydın Köfte & Döner (Göztepe Mah.)", imageName: "gunaydin",hasPhoto: true, rating: 4.8, commentCount: 150, isMudavim: true),
+        Restaurant(name: "Greenie Fun & Food (Bostancı Mah.)", imageName: "greenieFood", rating: 4.3, commentCount: 50, isMudavim: true),
+        Restaurant(name: "Zamane Tatlısı (Koşuyolu Mah.)", imageName: "zamaneTatlisi",hasPhoto: true, rating: 3.9, commentCount: 10, isMudavim: false), Restaurant(name: "Zula (Eğitim Mah.)", imageName: "zula",hasPhoto: true, rating: 4.2, commentCount: 100, isMudavim: false)
     ]
     
     
@@ -65,7 +66,8 @@ extension RestaurantCollectionCell: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: restaurantCellIdentifier, for: indexPath) as! RestaurantCell
-        
+        let rest = restaurants[indexPath.row]
+        cell.restaurant = rest
         cell.imageView.image = UIImage(named: restaurants[indexPath.row].imageName)
         cell.restaurantNameLabel.text = restaurants[indexPath.row].name
         return cell

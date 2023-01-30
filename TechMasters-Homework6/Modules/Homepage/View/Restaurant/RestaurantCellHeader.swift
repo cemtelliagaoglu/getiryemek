@@ -16,12 +16,13 @@ class RestaurantCellHeader: UICollectionReusableView {
         return label
     }()
     
-    let seeAllButton: UIButton = {
+    lazy var seeAllButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setTitle("Tümünü gör (12)", for: .normal)
         button.backgroundColor = .clear
         button.titleLabel?.font = UIFont(name: "OpenSans-Regular", size: 14)
         button.setTitleColor(UIColor(named: "brandColor1"), for: .normal)
+        button.addTarget(self, action: #selector(handleSeeAllTapped), for: .touchUpInside)
         
         return button
     }()
@@ -41,5 +42,9 @@ class RestaurantCellHeader: UICollectionReusableView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func handleSeeAllTapped(){
+        print("See All Tapped")
     }
 }
