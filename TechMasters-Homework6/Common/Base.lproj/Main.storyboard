@@ -18,28 +18,8 @@
                     <view key="view" contentMode="scaleToFill" id="DRb-3o-Oca">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWz-46-cNU">
-                                <rect key="frame" x="114" y="430.5" width="186" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="search-icon" imagePlacement="leading" title="Canin ne cekiyor ?" imagePadding="2">
-                                    <color key="baseForegroundColor" name="brandColor1"/>
-                                </buttonConfiguration>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="getiryemek" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acS-DY-hhF">
-                                <rect key="frame" x="186" y="288" width="175" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="30"/>
-                                <color key="textColor" name="brandColor2"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="NHk-gv-fLN"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="aWz-46-cNU" firstAttribute="centerY" secondItem="DRb-3o-Oca" secondAttribute="centerY" id="abd-zs-uwr"/>
-                            <constraint firstItem="aWz-46-cNU" firstAttribute="centerX" secondItem="DRb-3o-Oca" secondAttribute="centerX" id="kaq-7a-57Z"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="INJ-ud-5F5"/>
                 </viewController>
@@ -56,20 +36,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHC-sb-Uca">
-                                <rect key="frame" x="0.0" y="92" width="414" height="64"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="60"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7iW-e5-uX2">
-                                        <rect key="frame" x="0.0" y="0.0" width="264" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="264" height="60"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="os3-jq-XJF">
-                                                <rect key="frame" x="0.0" y="0.0" width="8" height="64"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="8" height="60"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="8" id="HSO-XN-fZu"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWq-iG-jfK">
-                                                <rect key="frame" x="8" y="15" width="248" height="34"/>
+                                                <rect key="frame" x="8" y="13" width="248" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Ev, Göztepe, Nadirağa Sk." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCp-bl-s6r">
                                                         <rect key="frame" x="0.0" y="0.0" width="197" height="34"/>
@@ -103,10 +83,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ql1-kU-4VV">
-                                        <rect key="frame" x="264" y="0.0" width="150" height="64"/>
+                                        <rect key="frame" x="264" y="0.0" width="150" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OUw-cF-fW4">
-                                                <rect key="frame" x="38.5" y="11.5" width="73.5" height="41"/>
+                                                <rect key="frame" x="38.5" y="9.5" width="73.5" height="41"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TVS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.64999997615814209" translatesAutoresizingMaskIntoConstraints="NO" id="myu-qP-pjY">
                                                         <rect key="frame" x="0.0" y="0.0" width="73.5" height="20.5"/>
@@ -133,11 +113,11 @@
                                 </subviews>
                                 <color key="backgroundColor" name="brandColor2"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="Lvo-Ru-42a"/>
+                                    <constraint firstAttribute="height" constant="60" id="Lvo-Ru-42a"/>
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AmF-i3-PDQ">
-                                <rect key="frame" x="0.0" y="156" width="414" height="657"/>
+                                <rect key="frame" x="0.0" y="152" width="414" height="661"/>
                                 <color key="backgroundColor" name="bgColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="luK-1g-WRB">
                                     <size key="itemSize" width="128" height="128"/>
@@ -378,7 +358,6 @@
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="search-icon" width="21" height="22"/>
         <namedColor name="bgColor">
             <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

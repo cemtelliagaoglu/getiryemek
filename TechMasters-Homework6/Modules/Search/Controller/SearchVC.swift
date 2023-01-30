@@ -11,7 +11,16 @@ class SearchVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configureNavigationBar()
     }
- 
+    
+    func configureNavigationBar(){
+        // set title
+        let navLabel = UILabel()
+        navLabel.font = UIFont(name: "OpenSans-Regular", size: 16)!
+        navLabel.text = "Arama"
+        navLabel.textColor = .white
+        navigationItem.titleView = navLabel
+        
+    }
 }

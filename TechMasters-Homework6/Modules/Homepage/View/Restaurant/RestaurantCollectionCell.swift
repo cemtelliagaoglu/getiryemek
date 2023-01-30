@@ -13,14 +13,18 @@ class RestaurantCollectionCell: UICollectionViewCell {
     private let restaurantCellIdentifier = "restaurantCell"
     
     private let restaurants: [Restaurant] = [
-        Restaurant(name: "Günaydın Köfte & Döner", imageName: "gunaydin"), Restaurant(name: "Greenie Fun & Food", imageName: "greenieFood"),
-        Restaurant(name: "Zamane Tatlısı", imageName: "zamaneTatlisi"), Restaurant(name: "Zula", imageName: "zula")
+        Restaurant(name: "Günaydın Köfte & Döner (Göztepe Mah.)", imageName: "gunaydin"), Restaurant(name: "Greenie Fun & Food (Bostancı Mah.)", imageName: "greenieFood"),
+        Restaurant(name: "Zamane Tatlısı (Koşuyolu Mah.)", imageName: "zamaneTatlisi"), Restaurant(name: "Zula (Eğitim Mah.)", imageName: "zula")
     ]
+    
+    
+    
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        
+        layout.sectionInset = UIEdgeInsets(top: 2, left: 8, bottom: 0, right: 8)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .clear
         return collectionView
     }()
@@ -31,6 +35,8 @@ class RestaurantCollectionCell: UICollectionViewCell {
     //MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .white
+        
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -65,7 +71,7 @@ extension RestaurantCollectionCell: UICollectionViewDelegate, UICollectionViewDa
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (bounds.width - 16) 
+        let width = (bounds.width - 16)
         
         return CGSize(width: width , height: bounds.height)
     }

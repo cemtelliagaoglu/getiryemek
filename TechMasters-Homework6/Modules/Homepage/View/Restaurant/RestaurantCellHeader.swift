@@ -12,15 +12,15 @@ class RestaurantCellHeader: UICollectionReusableView {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = .boldSystemFont(ofSize: 16)
+        label.font = UIFont(name: "OpenSans-Regular", size: 16)
         return label
     }()
     
     let seeAllButton: UIButton = {
         let button = UIButton(type: .custom)
-        button.setTitle("Tümünü gör(77)", for: .normal)
+        button.setTitle("Tümünü gör (12)", for: .normal)
         button.backgroundColor = .clear
-        button.titleLabel?.font = .systemFont(ofSize: 14)
+        button.titleLabel?.font = UIFont(name: "OpenSans-Regular", size: 14)
         button.setTitleColor(UIColor(named: "brandColor1"), for: .normal)
         
         return button

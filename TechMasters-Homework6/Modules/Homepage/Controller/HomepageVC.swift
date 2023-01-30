@@ -17,15 +17,13 @@ class HomepageVC: UIViewController{
     private let bannerIdentifier = "bannerIdentifier"
     private let searchCellIdentifier = "searchIdentifier"
     private let carouselIdentifier = "carouselIdentifier"
+    private let cuisineCellIdentifier = "cuisineCell"
     
     var serviceTimeInterval: String = "10-55 dk"
-    private let sugggestions = ["Ne Yesem?","Müdavim","Siparişlerim","Masa"]
-    private let imageNames = ["help","mudavim","history","masa"]
-    private let headerTitles = ["75 TL'ye Varan İndirimler", "Müdavim Restoranları", "Zincir Restoranlar", "Mutfaklar", "Bu Saate Özel"]
-    private let cuisineImageNames = [
-        "indirimliler","mudavim", "doner", "burger", "tavuk", "kebap", "sokak-lezzetleri",
-        "pide", "pizza", "lahmacun", "pasta-tatli", "cig-kofte", "vejetaryen", "ev-yemekleri"
-    ]
+    private let carouselItemNames = ["Ne Yesem?","Müdavim","Siparişlerim","Masa"]
+    private let carouselImageNames = ["help","mudavim","history","masa"]
+    private let headerTitles = ["50 TL'ye Varan İndirimler", "Müdavim Restoranları", "Zincir Restoranlar", "Bu Saate Özel", "Keşfet" ,"Mutfaklar", "Tüm Restoranlar"]
+
     
     @IBOutlet weak var serviceTimeLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -39,17 +37,11 @@ class HomepageVC: UIViewController{
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        collectionView.register(BannerCollectionCell.self, forCellWithReuseIdentifier: bannerIdentifier)
-        collectionView.register(SearchCell.self, forCellWithReuseIdentifier: searchCellIdentifier)
-        collectionView.register(CarouselCell.self, forCellWithReuseIdentifier: carouselIdentifier)
-        collectionView.register(RestaurantCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
-        collectionView.register(RestaurantCollectionCell.self, forCellWithReuseIdentifier: restaurantCellIdentifier)
-        
         configureNavigationBar()
+        registerCollectionViewCells()
         configureUI()
     }
-
+    //MARK: - Methods
     func configureNavigationBar(){
         // set title
         let navLabel = UILabel()
@@ -68,6 +60,17 @@ class HomepageVC: UIViewController{
         addressLabel.attributedText = attributedString
     }
     
+    func registerCollectionViewCells(){
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.register(BannerCollectionCell.self, forCellWithReuseIdentifier: bannerIdentifier)
+        collectionView.register(SearchCell.self, forCellWithReuseIdentifier: searchCellIdentifier)
+        collectionView.register(CarouselCell.self, forCellWithReuseIdentifier: carouselIdentifier)
+        collectionView.register(RestaurantCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
+        collectionView.register(RestaurantCollectionCell.self, forCellWithReuseIdentifier: restaurantCellIdentifier)
+        collectionView.register(CuisineCell.self, forCellWithReuseIdentifier: cuisineCellIdentifier)
+    }
+    
 }
 //MARK: - UICollectionView
 
@@ -80,14 +83,12 @@ extension HomepageVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
             return 1
         }else if section == 2{
             return 4
-        }else if section == 3{
-            return 1
         }else{
-            return 2
+            return 1
         }
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 8
+        return headerTitles.count + 2
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section == 0{
@@ -100,13 +101,14 @@ extension HomepageVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         }else if indexPath.section == 2{
             // carouselCell
             let width = (UIScreen.main.bounds.size.width - 56) / 4
-            return CGSize(width: width, height: 70)
-            
-        }else if indexPath.section == 3{
-            return CGSize(width: UIScreen.main.bounds.width, height: 200)
-        }else{
-            let width = (UIScreen.main.bounds.width - 20) / 2
             return CGSize(width: width, height: 80)
+            
+        }else if indexPath.section > 2 && indexPath.section < 8{
+            // restaurantCell
+            return CGSize(width: UIScreen.main.bounds.width, height: 200)
+        
+        }else{
+            return CGSize(width: UIScreen.main.bounds.width, height: 100)
         }
     }
     
@@ -132,24 +134,33 @@ extension HomepageVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if indexPath.section == 0{
+            // bannerCell
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: bannerIdentifier, for: indexPath) as! BannerCollectionCell
-
+            
             return cell
         }else if indexPath.section == 1{
+            // searchCell
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: searchCellIdentifier, for: indexPath) as! SearchCell
             
             return cell
         }else if indexPath.section == 2{
+            // carouselCell
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: carouselIdentifier, for: indexPath) as! CarouselCell
-            cell.imageView.image = UIImage(named: imageNames[indexPath.row])!
-            cell.label.text = sugggestions[indexPath.row]
+            cell.imageView.image = UIImage(named: carouselImageNames[indexPath.row])!
+            cell.label.text = carouselItemNames[indexPath.row]
             
             return cell
-        }else if indexPath.section == 3{
+        }else if indexPath.section > 2 && indexPath.section < 8{
+            // restaurantCell
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: restaurantCellIdentifier, for: indexPath) as! RestaurantCollectionCell
             
             return cell
-        }else{
+        }else if indexPath.section == 8{
+            // cuisinesCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cuisineCellIdentifier, for: indexPath) as! CuisineCell
+            
+            return cell
+        } else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
             cell.backgroundColor = .red
             return cell
@@ -168,7 +179,7 @@ extension HomepageVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
             return UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
         }else{
             // restaurant cell + others
-            return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+            return UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
         }
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -185,6 +196,8 @@ extension HomepageVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
             return .zero
         }
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.selectionFollowsFocus = true
+    }
 }
 

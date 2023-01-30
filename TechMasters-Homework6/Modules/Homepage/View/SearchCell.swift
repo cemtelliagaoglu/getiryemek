@@ -13,7 +13,7 @@ class SearchCell: UICollectionViewCell {
         
         let button = UIButton(type: .system)
         button.tintColor = UIColor(named: "brandColor1")
-        button.titleLabel?.font = .systemFont(ofSize: 25)
+        button.titleLabel?.font = UIFont(name: "OpenSans-Regular", size: 16)
         button.setTitle("Canın ne çekiyor ?", for: .normal)
         button.setTitleColor(.gray, for: .normal)
         button.setImage(UIImage(named: "search-icon"), for: .normal)
@@ -39,7 +39,7 @@ class SearchCell: UICollectionViewCell {
         
         let button = UIButton(type: .system)
         button.tintColor = UIColor(named: "brandColor1")
-        button.titleLabel?.font = .systemFont(ofSize: 25)
+        button.titleLabel?.font = UIFont(name: "OpenSans-Regular", size: 16)
         button.setTitle("Filtrele & Sırala", for: .normal)
         button.setImage(UIImage(named: "filter-icon"), for: .normal)
         button.backgroundColor = .clear
