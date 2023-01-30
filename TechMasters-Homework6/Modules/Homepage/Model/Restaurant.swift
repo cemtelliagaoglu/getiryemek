@@ -10,4 +10,8 @@ import UIKit
 struct Restaurant{
     var name: String!
     var imageName: String!
+    var hasPhoto: Bool? = false
+    var rating: Double?
+    var commentCount: Int?
+    var isMudavim: Bool
 }
