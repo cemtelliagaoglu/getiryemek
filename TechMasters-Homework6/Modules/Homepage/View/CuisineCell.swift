@@ -12,10 +12,7 @@ class CuisineCell: UICollectionViewCell {
     //MARK: - Properties
     
     private let cuisineCellIdentifier = "cuisineCell"
-    private let cuisineImageNames = [
-        "indirimliler","mudavim", "doner", "burger", "tavuk", "kebap", "sokak-lezzetleri",
-        "pide", "pizza", "lahmacun", "pasta-tatli", "cig-kofte", "vejetaryen", "ev-yemekleri"
-    ]
+    
     private let cuisines: [Cuisine] = [
         Cuisine(name: "İndirimliler", imageName: "indirimliler"), Cuisine(name: "Müdavim", imageName: "mdvm"),
         Cuisine(name: "Döner", imageName: "doner"), Cuisine(name: "Burger", imageName: "burger"), Cuisine(name: "Tavuk", imageName: "tavuk"), Cuisine(name: "Kebap", imageName: "kebap"), Cuisine(name: "Sokak Lezzetleri", imageName: "sokak-lezzetleri")
@@ -32,9 +29,6 @@ class CuisineCell: UICollectionViewCell {
         return collectionView
     }()
     
-    
-        
-
     //MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -67,7 +61,6 @@ extension CuisineCell: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cuisineCellIdentifier, for: indexPath) as! CarouselCell
         
         cell.imageView.image = UIImage(named: cuisines[indexPath.row].imageName)
@@ -78,12 +71,8 @@ extension CuisineCell: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         return CGSize(width: (bounds.width) / 3, height: 100)
     }
     
 }
-
-
-
 
