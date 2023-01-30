@@ -7,19 +7,7 @@
 
 import UIKit
 
-class Restaurant{
-//    var id: Int!
+struct Restaurant{
     var name: String!
     var imageName: String!
-    
-    init(name: String!, imageName: String!) {
-//        self.id = id
-        self.name = name
-        self.imageName = imageName
-    }
-//    var rating: Double!
-//    var location: String!
-//    var hasPhoto: Bool = false
-    
-    
 }
