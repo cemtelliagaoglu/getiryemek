@@ -12,13 +12,16 @@ class RestaurantCollectionCell: UICollectionViewCell {
     //MARK: - Properties
     private let restaurantCellIdentifier = "restaurantCell"
     
-    private let restaurants: [Restaurant] = [
-        Restaurant(name: "Günaydın Köfte & Döner (Göztepe Mah.)", imageName: "gunaydin",hasPhoto: true, rating: 4.8, commentCount: 150, isMudavim: true),
-        Restaurant(name: "Greenie Fun & Food (Bostancı Mah.)", imageName: "greenieFood", rating: 4.3, commentCount: 50, isMudavim: true),
-        Restaurant(name: "Zamane Tatlısı (Koşuyolu Mah.)", imageName: "zamaneTatlisi",hasPhoto: true, rating: 3.9, commentCount: 10, isMudavim: false), Restaurant(name: "Zula (Eğitim Mah.)", imageName: "zula",hasPhoto: true, rating: 4.2, commentCount: 100, isMudavim: false)
-    ]
+    var restaurants: [Restaurant] = Database.restaurants
     
-    
+    enum ViewMode{
+        case discounts, mudavims
+    }
+    var viewMode: ViewMode?{
+        didSet{
+            fetchRestaurants(with: viewMode)
+        }
+    }
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -45,11 +48,22 @@ class RestaurantCollectionCell: UICollectionViewCell {
         collectionView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
         collectionView.register(RestaurantCell.self, forCellWithReuseIdentifier: restaurantCellIdentifier)
-        
+        fetchRestaurants(with: viewMode)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func fetchRestaurants(with viewMode: ViewMode?){
+        if let viewMode = viewMode{
+            if viewMode == .discounts{
+                self.restaurants = Database.discounts
+            }else{
+                self.restaurants = Database.mudavims
+            }
+            self.collectionView.reloadData()
+        }
     }
 
 }
@@ -68,8 +82,7 @@ extension RestaurantCollectionCell: UICollectionViewDelegate, UICollectionViewDa
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: restaurantCellIdentifier, for: indexPath) as! RestaurantCell
         let rest = restaurants[indexPath.row]
         cell.restaurant = rest
-        cell.imageView.image = UIImage(named: restaurants[indexPath.row].imageName)
-        cell.restaurantNameLabel.text = restaurants[indexPath.row].name
+
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
