@@ -1,7 +1,7 @@
 # getiryemek
 
-<a><img src = "https://user-images.githubusercontent.com/82387854/215634401-005a466d-3221-467c-b2ec-aa350de608f4.png" width = "240" height = "500" >
-<img src = "https://user-images.githubusercontent.com/82387854/215634859-e555d734-d66b-40a1-972f-43ad1cfb3d50.png" width = "240" height = "500" >
+<a><img src = "https://user-images.githubusercontent.com/82387854/215637436-a1a0ffa5-800b-420c-9a15-e1d7cfb0df79.png" height = "750" >
+<img src = "https://user-images.githubusercontent.com/82387854/215637489-1f851df3-b7ff-4731-a529-5924621529f1.png" height = "750" >
 </a>
 ## Description
 
