@@ -14,4 +14,5 @@ struct Restaurant{
     var rating: Double?
     var commentCount: Int?
     var isMudavim: Bool
+    var restaurantBrings: Bool
 }
