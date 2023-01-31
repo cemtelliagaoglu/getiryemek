@@ -25,6 +25,8 @@
 		8461978F2981D22E0074521A /* BannerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461978E2981D22E0074521A /* BannerCollectionCell.swift */; };
 		846197912981E4230074521A /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846197902981E4230074521A /* BannerCell.swift */; };
 		846197932981EF710074521A /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846197922981EF710074521A /* SearchCell.swift */; };
+		84AD07A829885D7300F6F8A7 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD07A729885D7300F6F8A7 /* Database.swift */; };
+		84AD07AD298880DC00F6F8A7 /* AllRestaurantsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AD07AC298880DC00F6F8A7 /* AllRestaurantsCell.swift */; };
 		84EA47BA2983F9FD00FBDC22 /* RestaurantCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA47B92983F9FD00FBDC22 /* RestaurantCollectionCell.swift */; };
 		84EA47BC2983FE5100FBDC22 /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EA47BB2983FE5100FBDC22 /* Cuisine.swift */; };
 		84F2104C298816C600419956 /* MainTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F2104B298816C600419956 /* MainTabVC.swift */; };
@@ -52,6 +54,8 @@
 		8461978E2981D22E0074521A /* BannerCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionCell.swift; sourceTree = "<group>"; };
 		846197902981E4230074521A /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		846197922981EF710074521A /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		84AD07A729885D7300F6F8A7 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		84AD07AC298880DC00F6F8A7 /* AllRestaurantsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRestaurantsCell.swift; sourceTree = "<group>"; };
 		84EA47B92983F9FD00FBDC22 /* RestaurantCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCollectionCell.swift; sourceTree = "<group>"; };
 		84EA47BB2983FE5100FBDC22 /* Cuisine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cuisine.swift; sourceTree = "<group>"; };
 		84F2104B298816C600419956 /* MainTabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabVC.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				84FCF1292982C0B6001636DF /* CarouselCell.swift */,
 				84EA47BD2984023E00FBDC22 /* Restaurant */,
 				8455F6FB29873F8E00AA8995 /* CuisineCell.swift */,
+				84AD07AC298880DC00F6F8A7 /* AllRestaurantsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			children = (
 				846197862981BCA90074521A /* Restaurant.swift */,
 				84EA47BB2983FE5100FBDC22 /* Cuisine.swift */,
+				84AD07A729885D7300F6F8A7 /* Database.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 				84EA47BC2983FE5100FBDC22 /* Cuisine.swift in Sources */,
 				846197912981E4230074521A /* BannerCell.swift in Sources */,
 				8461978229818C6E0074521A /* RestaurantCellHeader.swift in Sources */,
+				84AD07AD298880DC00F6F8A7 /* AllRestaurantsCell.swift in Sources */,
 				846197892981C6810074521A /* SearchVC.swift in Sources */,
 				84FCF12A2982C0B6001636DF /* CarouselCell.swift in Sources */,
 				8461978F2981D22E0074521A /* BannerCollectionCell.swift in Sources */,
@@ -356,6 +363,7 @@
 				846197872981BCA90074521A /* Restaurant.swift in Sources */,
 				8461978D2981C6CE0074521A /* CampaignVC.swift in Sources */,
 				84619765298139710074521A /* SceneDelegate.swift in Sources */,
+				84AD07A829885D7300F6F8A7 /* Database.swift in Sources */,
 				846197842981BC6C0074521A /* RestaurantCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

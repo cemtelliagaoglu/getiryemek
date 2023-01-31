@@ -139,8 +139,10 @@ class RestaurantCell: UICollectionViewCell {
         if isMudavim{
             imageView.addSubview(mudavimView)
             mudavimView.anchor(top: imageView.topAnchor, left: imageView.leftAnchor, bottom: nil, right: nil, paddingTop: 8, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 30)
+            mudavimView.isHidden = false
+        }else{
+            mudavimView.isHidden = true
         }
-        
     }
     
 }
