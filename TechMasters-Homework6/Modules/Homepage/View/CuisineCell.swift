@@ -13,10 +13,7 @@ class CuisineCell: UICollectionViewCell {
     
     private let cuisineCellIdentifier = "cuisineCell"
     
-    private let cuisines: [Cuisine] = [
-        Cuisine(name: "İndirimliler", imageName: "indirimliler"), Cuisine(name: "Müdavim", imageName: "mdvm"),
-        Cuisine(name: "Döner", imageName: "doner"), Cuisine(name: "Burger", imageName: "burger"), Cuisine(name: "Tavuk", imageName: "tavuk"), Cuisine(name: "Kebap", imageName: "kebap"), Cuisine(name: "Sokak Lezzetleri", imageName: "sokak-lezzetleri")
-    ]
+    var cuisines: [Cuisine] = Database.cuisines
     
     
     let collectionView: UICollectionView = {
